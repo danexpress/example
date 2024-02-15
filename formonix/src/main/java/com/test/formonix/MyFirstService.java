@@ -33,6 +33,11 @@ public class MyFirstService {
 
     }
 
+    public String readProp() {
+        return environment.getProperty("my.custom.property");
+
+    }
+
     @Autowired
     public void setEnvironment(Environment environment) {
         this.environment = environment;

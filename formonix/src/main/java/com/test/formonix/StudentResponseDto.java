@@ -1,9 +1,8 @@
 package com.test.formonix;
 
-public record StudentDto(
+public record StudentResponseDto(
         String firstname,
         String lastname,
-        String email,
-        Integer schoolId) {
+        String email) {
 
 }

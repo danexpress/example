@@ -26,8 +26,12 @@ public class School {
         this.id = id;
     }
 
-    public School() {
+    public School(String name) {
+        this.name = name;
+    }
 
+    public School() {
+        // Default constructor
     }
 
     public String getName() {

@@ -1,9 +1,15 @@
 package com.test.formonix;
 
+import org.hibernate.engine.internal.Cascade;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,15 +31,8 @@ public class Student {
 
     private int age;
 
-    @Column(updatable = false)
-    private String some_column;
-
-    // public Student(String firstname, String lastname, String email, int age) {
-    // this.firstname = firstname;
-    // this.lastname = lastname;
-    // this.email = email;
-    // this.age = age;
-    // }
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    private StudentProfile studentProfile;
 
     public Student() {
 
@@ -77,6 +76,18 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "school_id")
+    private School school;
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
     }
 
 }

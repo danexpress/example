@@ -2,6 +2,7 @@ package com.test.formonix.student;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -31,8 +32,14 @@ class StudentMapperTest {
     }
 
     @Test
+    public void should_throw_studentDto_to_student_when_studentDto_is_null() {
+        var exp = assertThrows(NullPointerException.class, () -> mapper.toStudent(null));
+        assertEquals("The student Dto should not be null", exp.getMessage());
+    }
+
+    @Test
     public void shouldMapStudentDtoStudentResponseDto() {
-        Student student = new Student("John", "Doe", "johndoe@mail.com", 20);
+        Student student = new Student();
 
         StudentResponseDto response = mapper.toStudentResponseDto(student);
         assertEquals(response.firstname(), student.getFirstname());

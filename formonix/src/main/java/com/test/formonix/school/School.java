@@ -1,8 +1,9 @@
-package com.test.formonix;
+package com.test.formonix.school;
 
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.test.formonix.student.Student;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

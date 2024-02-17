@@ -1,4 +1,6 @@
-package com.test.formonix;
+package com.test.formonix.studentprofile;
+
+import com.test.formonix.student.Student;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

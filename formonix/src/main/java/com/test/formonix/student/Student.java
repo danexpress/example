@@ -1,8 +1,8 @@
-package com.test.formonix;
-
-import org.hibernate.engine.internal.Cascade;
+package com.test.formonix.student;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.test.formonix.school.School;
+import com.test.formonix.studentprofile.StudentProfile;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

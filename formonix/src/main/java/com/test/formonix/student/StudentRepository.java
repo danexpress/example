@@ -1,4 +1,4 @@
-package com.test.formonix;
+package com.test.formonix.student;
 
 import java.util.List;
 

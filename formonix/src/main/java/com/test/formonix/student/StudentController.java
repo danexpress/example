@@ -1,7 +1,6 @@
-package com.test.formonix;
+package com.test.formonix.student;
 
 import org.springframework.web.bind.annotation.RestController;
-
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 

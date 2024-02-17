@@ -1,6 +1,8 @@
-package com.test.formonix;
+package com.test.formonix.student;
 
 import org.springframework.stereotype.Service;
+
+import com.test.formonix.school.School;
 
 @Service
 public class StudentMapper {

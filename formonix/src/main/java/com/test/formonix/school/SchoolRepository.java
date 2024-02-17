@@ -1,4 +1,4 @@
-package com.test.formonix;
+package com.test.formonix.school;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

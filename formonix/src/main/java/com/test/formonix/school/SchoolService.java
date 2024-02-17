@@ -1,4 +1,7 @@
-package com.test.formonix;
+package com.test.formonix.school;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -18,6 +21,13 @@ public class SchoolService {
         var school = schoolMapper.toSchool(dto);
         schoolRepository.save(school);
         return dto;
+    }
+
+    public List<SchoolDto> findAll() {
+        return schoolRepository.findAll()
+                .stream()
+                .map(schoolMapper::toSchoolDto)
+                .collect(Collectors.toList());
     }
 
 }

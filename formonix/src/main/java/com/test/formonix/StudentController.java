@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+// import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @RestController
@@ -31,18 +31,18 @@ public class StudentController {
     }
 
     @GetMapping("/students")
-    public List<Student> findAllStudent() {
+    public List<StudentResponseDto> findAllStudent() {
         return studentService.findAllStudent();
     }
 
     @GetMapping("/students/{student-id}")
-    public Student findAllStudentById(
+    public StudentResponseDto findAllStudentById(
             @PathVariable("student-id") Integer id) {
         return studentService.findStudentById(id);
     }
 
     @GetMapping("/students/search/{student-name}")
-    public List<Student> findAllStudentByName(
+    public List<StudentResponseDto> findAllStudentByName(
             @PathVariable("student-name") String name) {
         return studentService.findAllStudentByName(name);
     }
